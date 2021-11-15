@@ -21,7 +21,7 @@ class BubbleStories extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(text)
+          Text(text),
         ],
       ),
     ));
