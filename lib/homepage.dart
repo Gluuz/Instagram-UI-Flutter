@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_ui/pages/account.dart';
+import 'package:instagram_ui/pages/home.dart';
+import 'package:instagram_ui/pages/reels.dart';
+import 'package:instagram_ui/pages/search.dart';
+import 'package:instagram_ui/pages/shop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,11 +23,11 @@ class _HomePageState extends State<HomePage> {
 
   //different pages to navigate to
   final List<Widget> _children = [
-    Center(child: Text('Home')),
-    Center(child: Text('Search')),
-    Center(child: Text('Reels')),
-    Center(child: Text('Shop')),
-    Center(child: Text('Account')),
+    UserHome(),
+    UserSearch(),
+    UserReels(),
+    UserShop(),
+    UserAccount(),
   ];
 
   @override
