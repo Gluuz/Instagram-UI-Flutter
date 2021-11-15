@@ -15,7 +15,10 @@ class UserShop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Shop',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20)),
               Row(
                 children: [
                   Icon(Icons.calendar_today),
