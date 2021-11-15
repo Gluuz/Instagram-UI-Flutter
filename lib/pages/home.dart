@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:instagram_ui/pages/util/bubble_stories.dart';
+import 'package:instagram_ui/pages/util/user_post.dart';
 
 class UserHome extends StatelessWidget {
   final List people = [
@@ -15,7 +16,7 @@ class UserHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Row(
@@ -27,32 +28,46 @@ class UserHome extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(Icons.add, color: Colors.black),
+                  GestureDetector(
+                    onTap: () {
+                      // do something..
+                    },
+                    child: Icon(Icons.add),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(24.0),
-                    child: Icon(Icons.favorite, color: Colors.black),
+                    child: Icon(Icons.favorite),
                   ),
-                  Icon(Icons.share, color: Colors.black)
+                  Icon(Icons.share),
                 ],
               )
             ],
-          ),
-        ),
-        //Stories
-        body: Column(
-          children: [
-            Container(
-              height: 130,
-              child: ListView.builder(
+          )),
+      body: Column(
+        children: [
+          // STORIES
+          Container(
+            height: 130,
+            child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: people.length,
                 itemBuilder: (context, index) {
                   return BubbleStories(text: people[index]);
-                },
-              ),
-            )
-            //Posts
-          ],
-        ));
+                }),
+          ),
+
+          // POSTS
+          Expanded(
+            child: ListView.builder(
+                itemCount: people.length,
+                itemBuilder: (context, index) {
+                  return UserPosts(
+                    name: people[index],
+                  );
+                }),
+          ),
+        ],
+      ),
+    );
   }
 }
