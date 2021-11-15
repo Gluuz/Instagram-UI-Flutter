@@ -1,6 +1,6 @@
-# Instagram UI
+# Instagram clone UI
 
-A new Flutter project.
+this instagram clone doesn't contain any interaction(Back-End) it's just the UI
 
 ## Getting Started
 
